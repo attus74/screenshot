@@ -1,0 +1,11 @@
+## Routing
+---
+
+screenshot.generate:
+  path: screenshot/generate/{view}
+  defaults:
+    _controller: Drupal\screenshot\Controller\Screenshot::generate
+  requirements:
+    _permission: use screenshot
+  methods:
+    - POST

@@ -1,0 +1,12 @@
+## Libraries
+---
+
+screenshot:
+  css:
+    component:
+      css/screenshot.css: {}
+  js:
+    js/screenshot.js: {}
+    js/html2canvas.min.js: {}
+  dependencies:
+    - core/jquery

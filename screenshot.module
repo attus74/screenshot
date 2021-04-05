@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Screenshot
+ *
+ * @author Attila Németh
+ * 05.04.2021
+ */
+
+/**
+ * Implements hook_locale_translation_projects_alter()
+ */
+function screenshot_locale_translation_projects_alter(&$projects)
+{
+  $projects['screenshot']['info']['interface translation project'] = 'screenshot';
+  $projects['screenshot']['info']['interface translation server pattern'] =
+      drupal_get_path('module', 'screenshot') . '/translations/screenshot.%language.po';
+}
+
+/**
+ * Implements hook_page_attachments()
+ */
+function screenshot_page_attachments(&$attachments): void
+{
+  if (\Drupal::currentUser()->hasPermission('use screenshot')) {
+    $attachments['#attached']['library'][] = 'screenshot/screenshot';
+  }
+}
